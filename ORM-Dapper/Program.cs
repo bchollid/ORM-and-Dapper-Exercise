@@ -23,6 +23,11 @@ using System.Data;
 
             Console.WriteLine("What is the category ID?");
             var prodCat = int.Parse(Console.ReadLine());
+            if(prodCat > 10)
+            {
+                Console.WriteLine("Please enter a valid Category ID between 1 and 10");
+                return;
+            }
 
             repo.CreateProduct(prodName, prodPrice, prodCat);
 
